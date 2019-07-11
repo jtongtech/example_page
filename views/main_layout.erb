@@ -19,11 +19,13 @@
     }
 
    .top_nav {
+       width: 100vw;
     text-align: center;
     background-color: #137593;
     font-size: 11vw;
     color: #fff;
-    position: relative;
+    position: absolute;
+    z-index: 100;
    }
    .arrow {
    font-size: 7vw;
@@ -113,9 +115,9 @@
          <a href="#">Item 3</a>
       </li>
    </ul>
-</div>
-</div>
 <hr>
+</div>
+</div>
 <%=yield%>
 <footer>
    <div>
