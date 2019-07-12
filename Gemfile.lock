@@ -4,7 +4,6 @@ GEM
     rack (1.6.11)
     rack-protection (1.5.5)
       rack
-    rubysl-base64 (2.0.0)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -15,7 +14,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  rubysl-base64 (~> 2.0)
   sinatra (~> 1.4.0)
 
 RUBY VERSION
