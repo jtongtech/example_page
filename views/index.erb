@@ -2,53 +2,113 @@
 <link rel="stylesheet" href="/css/my_style.css">
 <div class="img_position">
    <img class="clendenin mountainPic" src="img/random-mountain-pic.jpg";>
-   <div class="welcome">Welcome to<br>my example<br>page</div>
+   <div class="welcome">
+   <% heroText.each do |item|%>
+    <% if item != heroText.last %>
+        <%= item %><br>
+    <% else %>
+        <%= item %>
+    <% end %>
+   <% end %>
+   </div>
 </div>
-<div class="assessment">This is our new assessment</div>
+<div class="assessment"><%= subHeroText %></div>
 <hr class="greyHr">
 <hr class="dGreyHr">
 <hr class="dBlueHr">
 <div class="cardContainer">
    <hr class="ltBlueHr">
    <div class="largeCard">
-      <div class="lrgWhteText whtText">These are cards</div>
-      <div class="smWhteText whtText">These cards are cool & tell you things about animals! Did you know a bird can run up to 65mph? And a cat can jump 26 feet in the air to catch prey?<br>Animals are so cool.<br><br>
-         <a class="whtLink" href="https://www.thefactsite.com/300-random-animal-facts/" target="_blank">Check out more animal facts</a> There are so many facts to learn.
+      <div class="lrgWhteText whtText"><%= mainCardTitle %></div>
+      <div class="smWhteText whtText"><%= mainCardText %><br><%= mainCardText2 %><br><br>
+         <a class="whtLink" href="<%= mainLink %>" target="_blank"><%= mainCardLink %></a> <%= mainCardText3 %>
       </div>
-      <div class="whtText alignRight">I want to see: <input type="checkbox" name="birds" value="bird"> Birds<input type="checkbox" name="cats" value="cat"> Cats</div>
-      <div class="whtCrdContainer">
-         <div class="whiteCardImgContainer"><img class="whiteCardImg" src="img/cat.png";></div>
-         <div class="bold blueText">This is card 1</div>
-         <div class="blueText blueTextSmall marginWhtCrd">Cats use their whiskers to determine space between objects in the dark.</div>
-         <div class="blueText blueTextSmall clickAndGo"><a class="blueText" target="_blank" href="https://coleandmarmalade.com/2018/12/31/25-interesting-facts-about-cats-you-may-not-have-known/">Click and Go!</a></div>
+      <div class="whtText alignRight">I want to see: 
+      <% counter = 1 %>
+        <% animals.each do |animal| %>
+            <input type="checkbox" id="<%= animal %><%= counter %>" name="<%= animal %>" onclick="only('<%= animal %>')"> <%= animal %>
+            <% counter += 1 %>
+        <% end %>
       </div>
+      <% whtCardInfo.each do |animal|%>
+         <% if animal[0] == "cat.png" %>
+         <div class="whtCrdContainerCat" name="whtCrdContainerCat">
+            <div class="whiteCardImgContainerCat"><img class="whiteCardImgCat" src="img/<%=animal[0] %>";></div>
+            <div class="bold blueText">This is card <%=animal[1] %></div>
+            <div class="blueText blueTextSmall marginWhtCrd"><%=animal[2] %></div>
+            <div class="blueText blueTextSmall clickAndGo"><a class="blueText" target="_blank" href="<%=animal[3] %>">Click and Go!</a></div>
+         </div>
+         <% else %>
+         <div class="whtCrdContainerBird" name="whtCrdContainerBird">
+            <div class="whiteCardImgContainerBird"><img class="whiteCardImgBird" src="img/<%=animal[0] %>";></div>
+            <div class="bold blueText">This is card <%=animal[1] %></div>
+            <div class="blueText blueTextSmall marginWhtCrd"><%=animal[2] %></div>
+            <div class="blueText blueTextSmall clickAndGo"><a class="blueText" target="_blank" href="<%=animal[3] %>">Click and Go!</a></div>
+         </div>
+         <% end %>
+      <% end %>
    </div>
 </div>
 <div class="constPanel">
-   <div class="constH1">Here is some constrained content</div>
+   <div class="constH1"><%= constTitle %></div>
    <div class="constText">
-      <p>Where the metal hits the meat player-coach but upsell so please use "solutionise" instead of solution ideas! :). Turn the crank what are the expectations and collaboration through advanced technology yet we need to dialog around your choice of work attire are there any leftovers in the kitchen? those options are already baked in with this model, yet clear blue water.</p>
-      <p>Products need full resourcing and support from a cross-functional team in order to be built, maintained, and evolved quick-win or root-and-branch review. We need to get all stakeholders up to speed and in the right place nobody's fault it could have been managed better drink from the firehose we need to make the new version clean and sexy crisp ppt.</p>
-      <p>Net net mobile friendly. Synergize productive mindfulness bench mark, loop back. Quick win synergize productive mindfulness nor hit the ground running yet when does this sunset?</p>
+      <% constCont.each do |cont| %>
+      <p><%= cont %></p>
+      <% end %>
    </div>
    <hr class="hrThin">
-   <div class="listCont">
-      <div class="listH1">List of things</div>
+   <div class="constText listCont">
+      <div class="listH1"><%= thingTitle %></div>
       <ul>
-         <li>Thing 1</li>
+      <% thingCont.each do |thing| %>
+         <li><%= thing %></li>
+      <% end %>
       </ul>
       <hr class="hrThin">
-      <div class="listH1">Have you heard</div>
-      <p>There was a duck at a store.</p>
-      <p>He ate for free. I should have ordered him more expensive food!</p>
-      <p>The lesson here is DUCKS EAT FOR FREE at that restaurant.</p>
+      <div class="listH1"><%= duckTitle %></div>
+      <% duckCont.each do |duck| %>
+         <p><%= duck %></p>
+      <% end %>
       <hr class="hrThin">
-      <div class="listH1">Picture of some things</div>
+      <div class="listH1"><%= pictureTitle %></div>
       <div class="thingCont">
-         <img class="things" src="img/things.jpg";>
-         <p class="thingsText">These guys are pretty coo’. Thing one and thing 2. You'll like what they do. Such fun from so few!</p>
+         <img class="things" src="img/<%= thingImg %>";>
+         <p class="thingsText"><%= thingsCont %></p>
       </div>
    </div>
 </div>
 <hr class="greyHr thinHr">
 <hr class="dBlueHr">
+        <script>
+        var selected = ""
+        function only(animal) {
+         //   console.log(animal);
+            var catElements = document.getElementsByName("whtCrdContainerCat");
+            var birdElements = document.getElementsByName("whtCrdContainerBird");
+            if(selected == ""){
+               if(animal == "Birds") {
+                  selected = selected + "Cats";
+                  // console.log(catElements[0]);
+                  catElements.forEach(function(element) {
+                     element.style.display = "none";
+                  });
+               } else {
+                  selected = selected + "Cats";
+                  // console.log(birdElements[0]);
+                  catElements.forEach(function(element) {
+                     element.style.display = "none";
+                  });
+               }
+            } else if(selected != "") {
+               selected = "both";
+                  // console.log(birdElements[0]);
+                  catElements.forEach(function(element) {
+                     element.style.display = "block";
+                  });
+                  birdElements.forEach(function(element) {
+                     element.style.display = "block";
+                  });
+            } 
+         //   console.log(animal);
+        }
+        </script>

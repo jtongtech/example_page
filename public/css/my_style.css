@@ -100,7 +100,7 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 3vw;
-    padding-bottom: 2vh;
+    padding-bottom: 6vh;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -134,7 +134,17 @@ a:hover {
     text-align: right;
 }
 
-.whtCrdContainer {
+.whtCrdContainerCat {
+    background-color: #fff;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 3vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 3vw;
+}
+
+.whtCrdContainerBird {
     background-color: #fff;
     border-color: #fff;
     border-style: solid;
@@ -157,11 +167,15 @@ a:hover {
     text-decoration: none;
 }
 
-.whiteCardImgContainer {
+.whiteCardImgContainerCat {
     position: relative;
 }
 
-.whiteCardImg {
+.whiteCardImgContainerBird {
+    position: relative;
+}
+
+.whiteCardImgCat {
     width: 100%;
     border-top-left-radius: 3vw;
     border-top-right-radius: 3vw;
@@ -169,6 +183,16 @@ a:hover {
     overflow: hidden;
     margin-top: -29%;
     margin-bottom: -28%;
+}
+
+.whiteCardImgBird {
+    width: 100%;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    clip-path: inset(4% 0 44% 0 round 3% 3% 0 0);
+    overflow: hidden;
+    margin-top: -3.5%;
+    margin-bottom: -36%;
 }
 
 .blueTextSmall {
