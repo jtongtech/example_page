@@ -5,6 +5,7 @@
     background: #fefefe;
     box-sizing: border-box;
     clip-path: ellipse(65% 97% at 51% 3%);
+    clear: both;
 }
 
 .mountainPic {
@@ -12,6 +13,9 @@
     margin-top: 15vh;
     transform: scale(2);
     clip-path: ellipse(65% 97% at 51% 3%);
+    overflow: hidden;
+    width: 100%;
+    clear: both;
 }
 
 .clendenin {
@@ -245,4 +249,8 @@ a:hover {
 
 .thinHr {
     height: 1vh;
+}
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
 }

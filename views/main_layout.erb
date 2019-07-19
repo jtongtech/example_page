@@ -9,31 +9,31 @@
 <div class="top_nav">
    <%=title%>
    <ul class="nav">
-   <% nav_btns.each do |btn|%>
+      <% nav_btns.each do |btn|%>
       <% if btn.class == Array %>
-         <li class="button-dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle noDecoration">
-            <%= btn[0] %> <i class="fas fa-angle-down arrow"></i>
-            </a>
-            <ul class="dropdown-menu">
-               <li>
-                  <a href="#"><%= btn[1] %></a>
-               </li>
-               <li>
-                  <a href="#"><%= btn[2] %></a>
-               </li>
-            </ul>
-         </li>
-         <% else %>
-         <li class="noDecoration">
-            <a href="#" class="noDecoration"><%= btn %></a>
-         </li>
-         <% end %>
+      <li class="button-dropdown">
+         <a href="javascript:void(0)" class="dropdown-toggle noDecoration">
+         <%= btn[0] %> <i class="fas fa-angle-down arrow"></i>
+         </a>
+         <ul class="dropdown-menu">
+            <li>
+               <a href="#"><%= btn[1] %></a>
+            </li>
+            <li>
+               <a href="#"><%= btn[2] %></a>
+            </li>
+         </ul>
+      </li>
+      <% else %>
+      <li class="noDecoration">
+         <a href="#" class="noDecoration"><%= btn %></a>
+      </li>
+      <% end %>
       <% end %>
    </ul>
    <hr>
 </div>
-</div>
+
 <%=yield%>
 <footer>
    <div class="footerText">
