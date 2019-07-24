@@ -7,7 +7,7 @@ def mock_data()
         subHeroText: 'This is our new assessment',
         mainCardTitle: 'These are cards',
         mainCardText: 'These cards are cool & tell you things about animals! Did you know a bird can run up to 65mph? And a cat can jump 26 feet in the air to catch prey?',
-        mainCardText2: 'Animals are so cool.',
+        mainCardText2: ' Animals are so cool.',
         mainCardLink: 'Check out more animal facts',
         mainLink: 'https://www.thefactsite.com/300-random-animal-facts/',
         mainCardText3: 'There are so many facts to learn.',

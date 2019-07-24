@@ -250,7 +250,116 @@ a:hover {
 .thinHr {
     height: 1vh;
 }
+.assessmentLarge {
+    display: none;
+}
 
 @media only screen and (min-width: 1224px) {
     /* Styles */
+    .mountainPic {
+        position: absolute;
+        transform: scale(1.5);
+        overflow: hidden;
+        width: 15%;
+        margin-top: 8vw;
+        margin-left: 60vw;
+        clip-path: ellipse(55% 85% at 50% 13%);
+    }
+    .img_position {
+        margin-top: 0;
+        display: inline-block;
+        position: relative;
+        background: #fefefe;
+        box-sizing: border-box;
+        clip-path: ellipse(65% 97% at 51% 3%);
+    }
+    br {
+        display: none;
+    }
+    .assessmentLarge {
+        display: block;
+        color: #147694;
+        text-align: left;
+        font-size: 1.9vw;
+        padding-top: 0vw;
+        font-weight: 900;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 0;
+    }
+    .assessment {
+        display: none;
+    }
+    .animalCardContainer {
+        display: flex;
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .whiteCardImgContainerCat {
+        margin-left: 0vw;
+        margin-right: 0vw;
+    }
+    .whiteCardImgContainerBird {
+        margin-left: 0vw;
+        margin-right: 0vw;
+    }
+    .lrgWhteText {
+        font-size: 1.5vw;
+    }
+    .smWhteText {
+        font-size: 1.15vw;
+    }
+    .marginWhtCrd {
+        margin-bottom: 1vw;
+    }
+    .whiteCardImgBird {
+        min-height: 20.5vw;
+        clip-path: inset(4% 0 44% 0 round 2vw 2vw 0 0);
+    }
+    .whiteCardImgCat {
+        min-width: 22vw;
+        clip-path: inset(27% 0 28% 0 round 2vw 2vw 0 0);
+    }
+    .whtCrdContainerBird {
+        flex: 1;
+        border-radius: 2vw !important;
+        margin-left: 0.5vw !important;
+    margin-right: 0.5vw !important;
+    min-width: 22vw;
+    }
+    .whtCrdContainerCat {
+        flex: 1;
+        border-radius: 2vw !important;
+        margin-left: 0.5vw !important;
+    margin-right: 0.5vw !important;
+    }
+    .constPanel {
+        width: 75vw;
+    }
+    .constText {
+        font-size: 1em;
+    }
+    .bold {
+        font-size: 1.5em;
+    }
+    .blueTextSmall {
+        font-size: 1em;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bottomContainer {
+        display: flex;
+    }
+    .flex1 {
+        flex: 1;
+        margin-right: 1vw;
+    }
+    .listH1 {
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+    .things {
+        height: 9vw;
+    }
 }

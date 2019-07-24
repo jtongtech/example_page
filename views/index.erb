@@ -3,13 +3,14 @@
 <div class="img_position">
    <img class="mountainPic" src="img/random-mountain-pic.jpg";>
    <div class="welcome">
-   <% heroText.each do |item|%>
-    <% if item != heroText.last %>
-        <%= item %><br>
-    <% else %>
-        <%= item %>
-    <% end %>
-   <% end %>
+      <% heroText.each do |item|%>
+      <% if item != heroText.last %>
+      <%= item %><br>
+      <% else %>
+      <%= item %>
+      <div class="assessmentLarge"><%= subHeroText %></div>
+      <% end %>
+      <% end %>
    </div>
 </div>
 <div class="assessment"><%= subHeroText %></div>
@@ -24,13 +25,14 @@
          <a class="whtLink" href="<%= mainLink %>" target="_blank"><%= mainCardLink %></a> <%= mainCardText3 %>
       </div>
       <div class="whtText alignRight">I want to see: 
-      <% counter = 1 %>
-        <% animals.each do |animal| %>
-            <input type="checkbox" id="<%= animal %>" name="<%= animal.downcase %>" value="t" onclick="checkState(this)"> <%= animal %>
-            <% counter += 1 %>
-        <% end %>
+         <% counter = 1 %>
+         <% animals.each do |animal| %>
+         <input type="checkbox" id="<%= animal %>" name="<%= animal.downcase %>" value="t" onclick="checkState(this)"> <%= animal %>
+         <% counter += 1 %>
+         <% end %>
       </div>
-      <% whtCardInfo.each do |animal|%>
+      <div class="animalCardContainer">
+         <% whtCardInfo.each do |animal|%>
          <% if animal[0] == "cat.png" %>
          <div class="whtCrdContainerCat" name="whtCrdContainerCat">
             <div class="whiteCardImgContainerCat"><img class="whiteCardImgCat" src="img/<%=animal[0] %>";></div>
@@ -46,7 +48,8 @@
             <div class="blueText blueTextSmall clickAndGo"><a class="blueText" target="_blank" href="<%=animal[3] %>">Click and Go!</a></div>
          </div>
          <% end %>
-      <% end %>
+         <% end %>
+      </div>
    </div>
 </div>
 <div class="constPanel">
@@ -56,78 +59,85 @@
       <p><%= cont %></p>
       <% end %>
    </div>
-   <hr class="hrThin">
-   <div class="constText listCont">
-      <div class="listH1"><%= thingTitle %></div>
-      <ul>
-      <% thingCont.each do |thing| %>
-         <li><%= thing %></li>
-      <% end %>
-      </ul>
-      <hr class="hrThin">
-      <div class="listH1"><%= duckTitle %></div>
-      <% duckCont.each do |duck| %>
+   <div class="constText listCont bottomContainer">
+      <div class="flex1">
+         <hr class="hrThin">
+         <div class="listH1"><%= thingTitle %></div>
+         <ul>
+            <% thingCont.each do |thing| %>
+            <li><%= thing %></li>
+            <% end %>
+         </ul>
+      </div>
+      <div class="flex1">
+         <hr class="hrThin">
+         <div class="listH1"><%= duckTitle %></div>
+         <% duckCont.each do |duck| %>
          <p><%= duck %></p>
-      <% end %>
-      <hr class="hrThin">
-      <div class="listH1"><%= pictureTitle %></div>
-      <div class="thingCont">
-         <img class="things" src="img/<%= thingImg %>";>
-         <p class="thingsText"><%= thingsCont %></p>
+         <% end %>
+      </div>
+      <div class="flex1">
+         <hr class="hrThin">
+         <div class="listH1"><%= pictureTitle %></div>
+         <div class="thingCont">
+            <img class="things" src="img/<%= thingImg %>";>
+            <p class="thingsText"><%= thingsCont %></p>
+         </div>
       </div>
    </div>
 </div>
 <hr class="greyHr thinHr">
 <hr class="dBlueHr">
 <script>
-var catsElements = document.getElementsByName("whtCrdContainerCat");
-var birdsElements = document.getElementsByName("whtCrdContainerBird");
-
-function checkState(item) {
-   var catCheckState = document.getElementById("Cats").checked;
-   var birdCheckState = document.getElementById("Birds").checked;
+   var catsElements = document.getElementsByName("whtCrdContainerCat");
+   var birdsElements = document.getElementsByName("whtCrdContainerBird");
    
-   if(document.getElementById("Cats").checked == true && document.getElementById("Birds").checked == true) {
-      catsElements.forEach(function(element) {
-         element.style.display = "block";
-      });
-      birdsElements.forEach(function(element) {
-         element.style.display = "block";
-      });
-      document.getElementById("Cats").checked = false;
-      document.getElementById("Birds").checked = false;
-   } else if(item.id == "Birds") {
-      onlyBirds();
-   } else {
-      onlyCats();
+   function checkState(item) {
+      var catCheckState = document.getElementById("Cats").checked;
+      var birdCheckState = document.getElementById("Birds").checked;
+      
+      if(document.getElementById("Cats").checked == true && document.getElementById("Birds").checked == true) {
+         catsElements.forEach(function(element) {
+            element.style.display = "block";
+         });
+         birdsElements.forEach(function(element) {
+            element.style.display = "block";
+         });
+         document.getElementById("Cats").checked = false;
+         document.getElementById("Birds").checked = false;
+      } else if(item.id == "Birds") {
+         onlyBirds();
+      } else {
+         onlyCats();
+      }
    }
-}
-
-function onlyBirds() {
-   var birdCheckState = document.getElementById("Birds").checked;
-   if(birdCheckState == true) {
-      catsElements.forEach(function(element) {
-         element.style.display = "none";
-      });
-   } else {
-      catsElements.forEach(function(element) {
-         element.style.display = "block";
-      });
+   
+   function onlyBirds() {
+      var birdCheckState = document.getElementById("Birds").checked;
+      if(birdCheckState == true) {
+         catsElements.forEach(function(element) {
+            element.style.display = "none";
+         });
+      } else {
+         catsElements.forEach(function(element) {
+            element.style.display = "block";
+         });
+      }
    }
-}
-
-function onlyCats() {
-   var catCheckState = document.getElementById("Cats").checked;
-   if(catCheckState == true) {
-      birdsElements.forEach(function(element) {
-         element.style.display = "none";
-      });
-   } else {
-      birdsElements.forEach(function(element) {
-         element.style.display = "block";
-      });
+   
+   function onlyCats() {
+      var catCheckState = document.getElementById("Cats").checked;
+      if(catCheckState == true) {
+         birdsElements.forEach(function(element) {
+            element.style.display = "none";
+         });
+      } else {
+         birdsElements.forEach(function(element) {
+            element.style.display = "block";
+         });
+      }
    }
-}
-
-
-        </script>
+   
+   
+           
+</script>

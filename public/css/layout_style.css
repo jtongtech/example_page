@@ -117,4 +117,39 @@ footer {
 
 @media only screen and (min-width: 1224px) {
     /* Styles */
+    .heroContainer {
+        display: flex;
+        margin: 0px 6vw 0 6vw;
+        font-size: 1.2vw;
+        padding-top: 1vw;
+        line-height: 2vh;
+    }
+    .nav {
+    display: block;
+    font-size: 1.0vw;
+    margin: 0;
+    padding: 0;
+    margin-left: 55vw;
+    margin-top: -3vw;
+    }
+    .arrow {
+        font-size: 2vw;
+    }
+    .top_nav {
+        padding-top: 0;
+    }
+    .nav li a {
+        padding: 3vw 1vw 1vw 1vw;
+    }
+    .nav li .dropdown-menu a {
+        width: 5vw;
+    }
+    .welcome {
+        font-size: 3vw !important;
+        text-align: left !important;
+        margin-left: 6vw;
+        margin-top: 4vw;
+        padding-bottom: 0 !important;
+        height: 12vw !important;
+    }
 }
