@@ -256,6 +256,15 @@ a:hover {
 
 @media only screen and (min-width: 1224px) {
     /* Styles */
+    .top_nav {
+        width: 98.7vw;
+    }
+    .nav li .dropdown-menu a {
+        min-width: 7vw !important;
+    }
+    .welcome {
+        width: 93vw;
+    }
     .mountainPic {
         position: absolute;
         transform: scale(1.5);
