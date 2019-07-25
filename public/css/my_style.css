@@ -6,6 +6,8 @@
 	box-sizing: border-box;
 	clip-path: ellipse(65% 97% at 51% 3%);
 	clear: both;
+	overflow-x: hidden;
+    	overflow-y: hidden;
 }
 
 .mountainPic {
